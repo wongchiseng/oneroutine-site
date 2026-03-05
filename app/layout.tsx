@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
   title: {
-    default: "OneRoutine — Plan your life, one routine at a time",
+    default: "OneRoutine — AI Routine Planner",
     template: "%s — OneRoutine",
   },
   description:
-    "OneRoutine is a minimal AI-powered routine planner that turns intentions into simple daily actions.",
+    "Plan your life, one routine at a time. AI helps turn intentions into simple daily routines.",
   applicationName: SITE_NAME,
   verification: {
     google: "nVlfTCGUxKgEeNZZp0Mm6BcCqWHh7Wg94_iZ5tfr6gk",
