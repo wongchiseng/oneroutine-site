@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   description:
     "OneRoutine is a minimal AI-powered routine planner that turns intentions into simple daily actions.",
   applicationName: SITE_NAME,
+  verification: {
+    google: "481833c4997da0a8",
+  },
   keywords: [
     "routine",
     "routine planner",
