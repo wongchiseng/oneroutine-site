@@ -12,24 +12,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ Update these if needed
 const SITE_NAME = "OneRoutine";
 const SITE_URL = "https://oneroutine.one";
-const OG_IMAGE = "/og-image.png"; // put the file in /public/og-image.png
+const OG_IMAGE = "/og-image.png"; // /public/og-image.png
+
+const TITLE = "OneRoutine — AI Routine Planner";
+const DESCRIPTION =
+  "Plan your life, one routine at a time. AI helps turn intentions into simple daily routines.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
   title: {
-    default: "OneRoutine — AI Routine Planner",
-    template: "%s — OneRoutine",
+    default: TITLE,
+    template: `%s — ${SITE_NAME}`,
   },
-  description:
-    "Plan your life, one routine at a time. AI helps turn intentions into simple daily routines.",
+  description: DESCRIPTION,
   applicationName: SITE_NAME,
+
   verification: {
     google: "nVlfTCGUxKgEeNZZp0Mm6BcCqWHh7Wg94_iZ5tfr6gk",
   },
+
   keywords: [
     "routine",
     "routine planner",
@@ -48,14 +52,14 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "OneRoutine — Plan your life, one routine at a time",
-    description: "A minimal AI-powered routine planner for sustainable daily action.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: [
       {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "OneRoutine — Plan your life, one routine at a time",
+        alt: TITLE,
       },
     ],
     locale: "en_US",
@@ -63,9 +67,12 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "OneRoutine — Plan your life, one routine at a time",
-    description: "A minimal AI-powered routine planner for sustainable daily action.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: [OG_IMAGE],
+    // 如果你有 X 帳號，建議加上（沒有也可以先註解）
+    // site: "@oneroutine",
+    // creator: "@oneroutine",
   },
 
   robots: {
@@ -79,10 +86,13 @@ export const metadata: Metadata = {
 
   icons: {
     icon: "/favicon.ico",
-    // 如果你之後有 png icon，可再加：
-    // icon: [{ url: "/icon.png", type: "image/png" }],
+    // 如果你之後有更正式的 favicon，可以加：
+    // shortcut: "/favicon.ico",
     // apple: "/apple-touch-icon.png",
   },
+
+  // 可選：如果你之後做 PWA / 安裝到桌面
+  // manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
