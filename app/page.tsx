@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
-  CalendarDays,
-  CheckCircle2,
-  ListTodo,
-  Sparkles,
-  Target,
+    ArrowRight,
+    CalendarDays,
+    CheckCircle2,
+    ListTodo,
+    Sparkles,
+    Target,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -504,6 +504,14 @@ export default function Home() {
                   <div className="mt-2 text-sm leading-6 text-zinc-500">A smaller first release is better than a noisy, overpromised launch.</div>
                 </div>
               </div>
+
+              <Link
+                href="/ai-routine-generator"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-zinc-900 transition-colors hover:text-zinc-600"
+              >
+                Read: what an AI routine planner actually does
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
 
