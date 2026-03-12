@@ -36,7 +36,7 @@ export function SiteHeader({ ctaHref, ctaLabel }: SiteHeaderProps) {
         {ctaHref && ctaLabel ? (
           <Link
             href={ctaHref}
-            className="rounded-full bg-[var(--brand-ink)] px-4 py-2 text-sm font-semibold text-white hover:-translate-y-0.5 hover:bg-[#122821]"
+            className="rounded-full bg-[var(--brand-ink)] px-4 py-2 text-sm font-semibold text-[color:var(--brand-ink-text)] hover:-translate-y-0.5 hover:opacity-90"
           >
             {ctaLabel}
           </Link>
@@ -51,7 +51,7 @@ export function SiteHeader({ ctaHref, ctaLabel }: SiteHeaderProps) {
 export function SiteFooter() {
   return (
     <footer className="px-6 pb-10 pt-4">
-      <div className="text-body mx-auto flex max-w-6xl flex-col gap-6 rounded-[2rem] border border-[var(--line)] bg-[rgba(255,251,245,0.72)] px-6 py-8 text-sm sm:flex-row sm:items-center sm:justify-between">
+      <div className="text-body mx-auto flex max-w-6xl flex-col gap-6 rounded-[2rem] border border-[var(--line)] bg-[var(--surface)] px-6 py-8 text-sm sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="font-semibold text-[var(--brand-ink)]">OneRoutine</div>
           <div className="mt-1">A calmer planner for routines, tasks, and direction.</div>

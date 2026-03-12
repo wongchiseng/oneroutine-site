@@ -184,8 +184,8 @@ export default function Home() {
     <div className="page-shell pb-10">
       <SiteHeader ctaHref="/#waitlist" ctaLabel="Join Waitlist" />
 
-      <main className="mx-auto max-w-6xl px-6 pb-20 pt-10">
-        <section className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+      <main className="mx-auto max-w-6xl px-6 pb-12 pt-6 sm:pb-20 sm:pt-10">
+        <section className="grid items-center gap-8 md:gap-10 lg:grid-cols-[1.02fr_0.98fr]">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -196,25 +196,25 @@ export default function Home() {
               A calmer operating system for your days
             </div>
 
-            <h1 className="mt-7 max-w-4xl font-[var(--font-fraunces)] text-5xl leading-[0.95] text-[var(--brand-ink)] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-7 max-w-4xl text-balance font-[var(--font-fraunces)] text-5xl leading-[0.95] text-[var(--brand-ink)] sm:text-6xl lg:text-7xl">
               Build a planning experience that feels like a finished product, not a pile of features.
             </h1>
 
-            <p className="text-body mt-7 max-w-2xl text-lg leading-8 sm:text-xl">
+            <p className="text-body mt-7 max-w-2xl text-justify text-lg leading-8 sm:text-left sm:text-xl">
               OneRoutine is being designed as a calmer planner for people who want one system for routines, tasks, and direction. AI helps translate intention into a usable day, without turning life into a dashboard.
             </p>
 
             <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <a
                 href="#waitlist"
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-ink)] px-7 py-4 text-base font-semibold text-white hover:-translate-y-0.5 hover:bg-[#122821]"
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-ink)] px-7 py-4 text-base font-semibold text-[color:var(--brand-ink-text)] hover:-translate-y-0.5 hover:opacity-90"
               >
                 Join the waitlist
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#generator"
-                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.5)] px-6 py-4 text-base font-semibold text-[var(--brand-ink)] hover:-translate-y-0.5 hover:bg-white"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface-strong)] px-6 py-4 text-base font-semibold text-[var(--brand-ink)] hover:-translate-y-0.5 hover:bg-[var(--surface-soft)]"
               >
                 Try the generator
               </a>
@@ -243,15 +243,15 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="absolute -left-3 top-8 hidden rounded-[1.75rem] bg-[var(--brand-ink)] px-5 py-4 text-sm text-white shadow-xl lg:block">
+            <div className="absolute -left-3 top-8 hidden rounded-[1.75rem] bg-[var(--brand-ink)] px-5 py-4 text-sm text-[color:var(--brand-ink-text)] shadow-xl lg:block">
               <div className="font-semibold">Less noise</div>
-              <div className="mt-1 max-w-[13rem] text-[rgba(245,238,229,0.86)]">
+              <div className="mt-1 max-w-[13rem] opacity-80">
                 More guidance on what to do today, next, and later.
               </div>
             </div>
 
             <div className="section-card overflow-hidden rounded-[2.25rem] p-3">
-              <div className="rounded-[1.8rem] bg-[#1a332b] p-3">
+              <div className="rounded-[1.8rem] bg-[var(--surface-input)] p-3">
                 <Image
                   src="/hero-mock.png"
                   alt="OneRoutine app preview"
@@ -263,16 +263,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="absolute -bottom-5 right-4 hidden rounded-[1.75rem] border border-[rgba(255,255,255,0.18)] bg-[rgba(23,52,43,0.92)] px-5 py-4 text-sm text-white shadow-xl md:block">
-              <div className="font-semibold">A single philosophy</div>
-              <div className="mt-1 max-w-[14rem] text-[rgba(245,238,229,0.82)]">
+            <div className="absolute -bottom-5 right-4 hidden rounded-[1.75rem] border border-[var(--line)] bg-[var(--surface-strong)] px-5 py-4 text-sm shadow-xl md:block">
+              <div className="font-semibold text-[var(--brand-ink)]">A single philosophy</div>
+              <div className="text-muted-ui mt-1 max-w-[14rem]">
                 Calm, warm, and deliberate instead of generic SaaS polish.
               </div>
             </div>
           </motion.div>
         </section>
 
-        <section className="mt-24 grid gap-6 lg:grid-cols-3">
+        <section className="mt-16 grid gap-6 md:mt-24 lg:grid-cols-3">
           {pillars.map((card, index) => {
             const Icon = card.icon;
             return (
@@ -284,23 +284,23 @@ export default function Home() {
                 transition={{ delay: index * 0.08 }}
                 className="section-card rounded-[1.9rem] p-8"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--brand-ink)] text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--brand-ink)] text-[color:var(--brand-ink-text)]">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h2 className="mt-6 text-2xl font-bold text-[var(--brand-ink)]">{card.title}</h2>
-                <p className="text-body mt-4 text-base leading-8">{card.body}</p>
+                <p className="text-body mt-4 text-justify text-base leading-8 sm:text-left">{card.body}</p>
               </motion.article>
             );
           })}
         </section>
 
-        <section className="mt-24 grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+        <section className="mt-16 grid gap-8 md:mt-24 lg:grid-cols-[0.92fr_1.08fr]">
           <div className="section-card rounded-[2rem] p-8 sm:p-10">
             <p className="eyebrow">Brand philosophy</p>
-            <h2 className="mt-4 font-[var(--font-fraunces)] text-4xl leading-tight text-[var(--brand-ink)] sm:text-5xl">
+            <h2 className="mt-4 text-balance font-[var(--font-fraunces)] text-4xl leading-tight text-[var(--brand-ink)] sm:text-5xl">
               One routine. One day. One life.
             </h2>
-            <p className="text-body mt-6 max-w-xl text-lg leading-8">
+            <p className="text-body mt-6 max-w-xl text-justify text-lg leading-8 sm:text-left">
               This product should feel coherent because the philosophy is coherent. It is not trying to win with more modules. It is trying to help people live with more clarity.
             </p>
           </div>
@@ -316,24 +316,24 @@ export default function Home() {
                 className="section-card rounded-[1.9rem] p-7"
               >
                 <div className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--brand-warm)]">{item.title}</div>
-                <p className="text-body mt-4 text-lg leading-8">{item.body}</p>
+                <p className="text-body mt-4 text-justify text-lg leading-8 sm:text-left">{item.body}</p>
               </motion.div>
             ))}
           </div>
         </section>
 
-        <section id="generator" className="mt-24 grid gap-8 lg:grid-cols-[0.86fr_1.14fr]">
-          <div className="section-card rounded-[2rem] bg-[linear-gradient(180deg,rgba(23,52,43,0.96),rgba(16,33,27,0.96))] p-8 text-white sm:p-10">
+        <section id="generator" className="mt-16 grid gap-8 md:mt-24 lg:grid-cols-[0.86fr_1.14fr]">
+          <div className="section-card rounded-[2rem] bg-[var(--brand-ink)] bg-[linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4))] p-8 text-[color:var(--brand-ink-text)] sm:p-10">
             <p className="eyebrow text-[color:var(--brand-rose)]">Mini experience</p>
-            <h2 className="mt-4 font-[var(--font-fraunces)] text-4xl leading-tight sm:text-5xl">
+            <h2 className="mt-4 text-balance font-[var(--font-fraunces)] text-4xl leading-tight sm:text-5xl">
               Try the routine generator.
             </h2>
-            <p className="mt-6 max-w-md text-base leading-8 text-[rgba(245,238,229,0.92)]">
+            <p className="mt-6 max-w-md text-justify text-base leading-8 opacity-90 sm:text-left">
               Start with a vague goal. The demo gives it enough structure that you can actually begin today.
             </p>
-            <div className="mt-10 rounded-[1.6rem] border border-white/18 bg-white/10 p-5">
-              <div className="text-sm font-semibold text-[rgba(252,247,239,0.96)]">What good output should feel like</div>
-              <ul className="mt-4 space-y-3 text-sm leading-6 text-[rgba(245,238,229,0.88)]">
+            <div className="mt-10 rounded-[1.6rem] border border-white/10 bg-black/10 p-5">
+              <div className="text-sm font-semibold opacity-100">What good output should feel like</div>
+              <ul className="mt-4 space-y-3 text-sm leading-6 opacity-90">
                 <li>Small enough to start without negotiation.</li>
                 <li>Clear enough to fit into a real day.</li>
                 <li>Gentle enough to feel sustainable.</li>
@@ -363,7 +363,7 @@ export default function Home() {
               <button
                 type="submit"
                 disabled={isGenerating || !routineInput.trim()}
-                className="h-14 rounded-2xl bg-[var(--brand-warm)] px-7 text-sm font-semibold text-white hover:bg-[#a86a38] disabled:cursor-not-allowed disabled:opacity-50"
+                className="h-14 rounded-2xl bg-[var(--brand-warm)] px-7 text-sm font-semibold text-[color:var(--brand-warm-text)] transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isGenerating ? "Crafting..." : "Generate plan"}
               </button>
@@ -404,9 +404,9 @@ export default function Home() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex flex-col gap-3 rounded-2xl border border-[var(--line)] bg-white p-4 sm:flex-row sm:items-center sm:gap-5"
+                      className="flex flex-col gap-3 rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] p-4 sm:flex-row sm:items-center sm:gap-5"
                     >
-                      <div className="w-fit rounded-xl bg-[var(--brand-ink)] px-3 py-2 font-mono text-sm font-semibold text-white">
+                      <div className="w-fit rounded-xl bg-[var(--brand-ink)] px-3 py-2 font-mono text-sm font-semibold text-[color:var(--brand-ink-text)]">
                         {step.time}
                       </div>
                       <div className="text-base font-medium text-[var(--foreground)]">{step.title}</div>
@@ -414,17 +414,17 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="mt-8 rounded-[1.5rem] bg-[var(--brand-ink)] p-6 text-white">
+                <div className="mt-8 rounded-[1.5rem] bg-[var(--brand-ink)] p-6 text-[color:var(--brand-ink-text)]">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-xl font-bold">Want this inside the app?</h3>
-                      <p className="mt-2 max-w-xl text-sm leading-6 text-[rgba(245,238,229,0.84)]">
+                      <p className="mt-2 max-w-xl text-sm leading-6 opacity-90">
                         Join early access to follow the launch and help shape how AI planning should behave in real life.
                       </p>
                     </div>
                     <a
                       href="#waitlist"
-                      className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[var(--brand-ink)] hover:bg-[#f5ede1]"
+                      className="inline-flex w-fit items-center gap-2 rounded-full bg-[var(--background)] px-5 py-3 text-sm font-semibold text-[var(--brand-ink)] hover:opacity-80"
                     >
                       Join waitlist
                       <ArrowRight className="h-4 w-4" />
@@ -436,41 +436,34 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <section className="mt-24 grid gap-8 lg:grid-cols-[1.02fr_0.98fr]">
-          <div className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] shadow-[var(--shadow-soft)]">
-            <Image
-              src="/product-direction-banner.png"
-              alt="OneRoutine product direction banner"
-              width={1600}
-              height={900}
-              className="h-[30rem] w-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(12,24,20,0.88)_0%,rgba(17,38,31,0.72)_44%,rgba(17,38,31,0.28)_72%,rgba(17,38,31,0.42)_100%)]" />
-            <div className="absolute inset-0 flex flex-col justify-between p-8 sm:p-10">
+        <section className="mt-16 grid gap-8 md:mt-24 lg:grid-cols-[1.02fr_0.98fr]">
+          <div className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--brand-ink)] shadow-[var(--shadow-soft)]">
+            <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0.05)_50%,rgba(0,0,0,0.1)_100%)]" />
+            <div className="relative flex min-h-[30rem] flex-col justify-between p-8 sm:p-10">
               <div className="max-w-2xl">
                 <p className="eyebrow text-[color:var(--brand-rose)]">Product direction</p>
-                <h2 className="mt-4 font-[var(--font-fraunces)] text-4xl leading-tight text-white sm:text-5xl">
+                <h2 className="mt-4 text-balance font-[var(--font-fraunces)] text-4xl leading-tight text-[color:var(--brand-ink-text)] sm:text-5xl">
                   Build carefully. Make it feel intentional from the first screen.
                 </h2>
-                <p className="mt-5 max-w-xl text-base leading-8 text-[rgba(245,238,229,0.88)]">
-                  This area now uses its own dedicated artwork, which gives the homepage a cleaner visual hierarchy and makes the product story feel less templated.
+                <p className="mt-5 max-w-xl text-justify text-base leading-8 text-[color:var(--brand-ink-text)] opacity-90 sm:text-left">
+                  This area uses a purposeful composition, which gives the homepage a cleaner visual hierarchy and makes the product story feel authentic.
                 </p>
               </div>
 
-              <div className="grid max-w-3xl gap-4 md:grid-cols-[1.15fr_0.85fr_0.85fr]">
-                <div className="rounded-[1.6rem] border border-white/14 bg-[rgba(12,24,20,0.46)] p-5 backdrop-blur-sm">
-                  <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[rgba(245,238,229,0.68)]">Visual brief</div>
-                  <div className="mt-3 text-xl font-semibold text-white">Calm confidence, not app-store noise.</div>
+              <div className="mt-10 grid max-w-3xl gap-4 md:grid-cols-[1.15fr_0.85fr_0.85fr]">
+                <div className="rounded-[1.6rem] border border-white/10 bg-black/20 p-5 backdrop-blur-sm">
+                  <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-ink-text)] opacity-70">Visual brief</div>
+                  <div className="mt-3 text-xl font-semibold text-[color:var(--brand-ink-text)]">Calm confidence, not app-store noise.</div>
                 </div>
-                <div className="rounded-[1.6rem] border border-white/14 bg-[rgba(12,24,20,0.38)] p-5 backdrop-blur-sm">
-                  <div className="text-sm font-semibold text-[rgba(245,238,229,0.7)]">Material</div>
-                  <div className="mt-2 text-sm leading-6 text-[rgba(245,238,229,0.9)]">
+                <div className="rounded-[1.6rem] border border-white/10 bg-black/10 p-5 backdrop-blur-sm">
+                  <div className="text-sm font-semibold text-[color:var(--brand-ink-text)] opacity-70">Material</div>
+                  <div className="mt-2 text-sm leading-6 text-[color:var(--brand-ink-text)] opacity-90">
                     Warm paper tones, restrained green, soft highlights.
                   </div>
                 </div>
-                <div className="rounded-[1.6rem] border border-white/14 bg-[rgba(12,24,20,0.38)] p-5 backdrop-blur-sm">
-                  <div className="text-sm font-semibold text-[rgba(245,238,229,0.7)]">Composition</div>
-                  <div className="mt-2 text-sm leading-6 text-[rgba(245,238,229,0.9)]">
+                <div className="rounded-[1.6rem] border border-white/10 bg-black/10 p-5 backdrop-blur-sm">
+                  <div className="text-sm font-semibold text-[color:var(--brand-ink-text)] opacity-70">Composition</div>
+                  <div className="mt-2 text-sm leading-6 text-[color:var(--brand-ink-text)] opacity-90">
                     A wide scene with breathing room and controlled focus.
                   </div>
                 </div>
@@ -490,7 +483,7 @@ export default function Home() {
               >
                 <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--brand-warm)]">{item.phase}</div>
                 <h3 className="mt-3 text-2xl font-bold text-[var(--brand-ink)]">{item.title}</h3>
-                <p className="text-body mt-3 text-base leading-7">{item.body}</p>
+                <p className="text-body mt-3 text-justify text-base leading-7 sm:text-left">{item.body}</p>
               </motion.div>
             ))}
 
@@ -499,7 +492,7 @@ export default function Home() {
                 <Target className="mt-1 h-5 w-5 shrink-0 text-[var(--brand-warm)]" />
                 <div>
                   <div className="font-semibold text-[var(--brand-ink)]">Related reading</div>
-                  <p className="text-muted-ui mt-2 text-sm leading-6">
+                  <p className="text-muted-ui mt-2 text-justify text-sm leading-6 sm:text-left">
                     The content page explains what an AI routine planner should actually do, which also helps the site&apos;s SEO structure stay coherent.
                   </p>
                   <Link
@@ -515,18 +508,18 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="waitlist" className="mt-24 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <section id="waitlist" className="mt-16 grid gap-8 md:mt-24 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="section-card rounded-[2rem] p-8 sm:p-10">
             <p className="eyebrow">Early access</p>
             <h2 className="mt-4 font-[var(--font-fraunces)] text-4xl leading-tight text-[var(--brand-ink)] sm:text-5xl">
               Follow the first release.
             </h2>
-            <p className="text-body mt-6 max-w-xl text-lg leading-8">
+            <p className="text-body mt-6 max-w-xl text-justify text-lg leading-8 sm:text-left">
               Join the waitlist if this planning philosophy resonates. Early users will get product updates, first access, and the chance to shape how routines, tasks, and life planning evolve together.
             </p>
 
             <div className="mt-10 space-y-4">
-              <div className="rounded-[1.5rem] border border-[var(--line)] bg-white p-5">
+              <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-strong)] p-5">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-ink)]" />
                   <div>
@@ -537,7 +530,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="rounded-[1.5rem] border border-[var(--line)] bg-white p-5">
+              <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-strong)] p-5">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-ink)]" />
                   <div>
