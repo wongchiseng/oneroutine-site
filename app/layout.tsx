@@ -1,39 +1,40 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Geist_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const sans = Manrope({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const display = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+});
+
+const mono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
 const SITE_NAME = "OneRoutine";
 const SITE_URL = "https://oneroutine.one";
-const OG_IMAGE = "/og-image.png"; // /public/og-image.png
-
-const TITLE = "OneRoutine — AI Routine Planner";
+const OG_IMAGE = "/og-image.png";
+const TITLE = "OneRoutine - AI Routine Planner";
 const DESCRIPTION =
   "Plan your life, one routine at a time. AI helps turn intentions into simple daily routines.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-
   title: {
     default: TITLE,
-    template: `%s — ${SITE_NAME}`,
+    template: `%s - ${SITE_NAME}`,
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME,
-
   verification: {
     google: "nVlfTCGUxKgEeNZZp0Mm6BcCqWHh7Wg94_iZ5tfr6gk",
   },
-
   keywords: [
     "routine",
     "routine planner",
@@ -43,11 +44,9 @@ export const metadata: Metadata = {
     "productivity",
     "AI routine planner",
   ],
-
   alternates: {
     canonical: SITE_URL,
   },
-
   openGraph: {
     type: "website",
     url: SITE_URL,
@@ -64,17 +63,12 @@ export const metadata: Metadata = {
     ],
     locale: "en_US",
   },
-
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
     images: [OG_IMAGE],
-    // 如果你有 X 帳號，建議加上（沒有也可以先註解）
-    // site: "@oneroutine",
-    // creator: "@oneroutine",
   },
-
   robots: {
     index: true,
     follow: true,
@@ -83,16 +77,9 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-
   icons: {
     icon: "/favicon.ico",
-    // 如果你之後有更正式的 favicon，可以加：
-    // shortcut: "/favicon.ico",
-    // apple: "/apple-touch-icon.png",
   },
-
-  // 可選：如果你之後做 PWA / 安裝到桌面
-  // manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -102,7 +89,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
+      <body className={`${sans.variable} ${display.variable} ${mono.variable} antialiased`} suppressHydrationWarning>
+        <div className="grain-overlay" />
         {children}
       </body>
     </html>
