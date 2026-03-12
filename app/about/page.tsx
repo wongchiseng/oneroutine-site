@@ -18,7 +18,7 @@ export default function AboutPage() {
               height={220}
               className="h-36 w-36 rounded-[2rem] object-cover"
             />
-            <div className="mt-8 rounded-[1.5rem] bg-[#f8f2ea] p-5 text-sm leading-7 text-zinc-600">
+            <div className="mt-8 rounded-[1.5rem] bg-[var(--surface-soft)] p-5 text-sm leading-7 text-body">
               Built independently as a calmer alternative to productivity products that feel too loud, too abstract, or too fragmented.
             </div>
           </div>
@@ -29,9 +29,9 @@ export default function AboutPage() {
               Why OneRoutine exists
             </h1>
 
-            <div className="mt-8 space-y-6 text-lg leading-8 text-zinc-700">
+            <div className="text-body mt-8 space-y-6 text-lg leading-8">
               <p>
-                I&apos;m Nakia, the creator of <strong>OneRoutine</strong>.
+                I&apos;m Nakia, the creator of <strong className="text-[var(--foreground)]">OneRoutine</strong>.
               </p>
               <p>
                 I studied engineering at National Taiwan University and became increasingly interested in how simple systems can help people live with more clarity.
@@ -56,7 +56,7 @@ export default function AboutPage() {
 
             <Link
               href="/#waitlist"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--brand-ink)] px-5 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:bg-[#122821]"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--brand-ink)] px-5 py-3 text-sm font-semibold text-[color:var(--brand-ink-text)] hover:-translate-y-0.5 hover:opacity-90"
             >
               Follow the launch
               <ArrowRight className="h-4 w-4" />

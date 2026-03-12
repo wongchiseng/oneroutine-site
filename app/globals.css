@@ -169,12 +169,12 @@ textarea {
 }
 
 .legal-prose {
-  color: #4b5563;
+  color: var(--text-soft);
 }
 
 .legal-prose h2,
 .legal-prose h3 {
-  color: #1b2a24;
+  color: var(--brand-ink);
 }
 
 .legal-prose h2 {

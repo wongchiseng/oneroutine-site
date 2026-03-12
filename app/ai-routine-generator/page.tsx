@@ -73,7 +73,7 @@ export default function AiRoutineGeneratorPage() {
               {["AI routine planner", "AI habit planner", "AI productivity tool"].map((keyword) => (
                 <span
                   key={keyword}
-                  className="rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.62)] px-4 py-2 text-sm font-medium text-zinc-700"
+                  className="rounded-full border border-[var(--line)] bg-[var(--surface-input)] px-4 py-2 text-sm font-medium text-body"
                 >
                   {keyword}
                 </span>
@@ -83,13 +83,13 @@ export default function AiRoutineGeneratorPage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/#waitlist"
-                className="rounded-full bg-[var(--brand-ink)] px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:bg-[#122821]"
+                className="rounded-full bg-[var(--brand-ink)] px-6 py-3 text-sm font-semibold text-[color:var(--brand-ink-text)] hover:-translate-y-0.5 hover:opacity-90"
               >
                 Join the waitlist
               </Link>
               <Link
                 href="/#generator"
-                className="rounded-full border border-[var(--line)] bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-ink)] hover:-translate-y-0.5 hover:bg-[#f7f0e6]"
+                className="rounded-full border border-[var(--line)] bg-[var(--surface-input)] px-6 py-3 text-sm font-semibold text-[var(--brand-ink)] hover:-translate-y-0.5 hover:bg-[var(--surface-soft)]"
               >
                 Try the generator
               </Link>
@@ -109,12 +109,12 @@ export default function AiRoutineGeneratorPage() {
           </div>
         </section>
 
-        <section className="mt-24 grid gap-6 lg:grid-cols-3">
+        <section className="mt-16 grid gap-6 lg:mt-24 lg:grid-cols-3">
           {topics.map((topic) => {
             const Icon = topic.icon;
             return (
               <article key={topic.title} className="section-card rounded-[1.9rem] p-8">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--brand-ink)] text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--brand-ink)] text-[color:var(--brand-ink-text)]">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h2 className="mt-6 text-2xl font-bold text-[var(--brand-ink)]">{topic.title}</h2>
@@ -124,8 +124,8 @@ export default function AiRoutineGeneratorPage() {
           })}
         </section>
 
-        <section className="mt-24 grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
-          <div className="section-card rounded-[2rem] p-8 sm:p-10">
+        <section className="mt-16 grid gap-8 lg:mt-24 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="section-card flex flex-col justify-center rounded-[2rem] p-8 sm:p-10">
             <p className="eyebrow">Why this page exists</p>
             <h2 className="mt-4 font-[var(--font-fraunces)] text-4xl leading-tight text-[var(--brand-ink)] sm:text-5xl">
               Clear content helps both readers and search intent.
@@ -139,7 +139,7 @@ export default function AiRoutineGeneratorPage() {
             <h3 className="text-2xl font-bold text-[var(--brand-ink)]">Principles behind a useful AI planner</h3>
             <ul className="text-body mt-6 space-y-4">
               {principles.map((principle) => (
-                <li key={principle} className="rounded-[1.4rem] border border-[var(--line)] bg-white px-4 py-4 leading-7">
+                <li key={principle} className="rounded-[1.4rem] border border-[var(--line)] bg-[var(--surface-input)] px-6 py-5 leading-7">
                   {principle}
                 </li>
               ))}
@@ -147,28 +147,31 @@ export default function AiRoutineGeneratorPage() {
           </div>
         </section>
 
-        <section className="mt-24 overflow-hidden rounded-[2.2rem] border border-[var(--line)] bg-[linear-gradient(135deg,rgba(23,52,43,0.98),rgba(25,58,48,0.92),rgba(183,121,70,0.52))] p-8 text-white sm:p-10">
-          <p className="eyebrow text-[color:var(--brand-rose)]">Connect it back to the product</p>
-          <h2 className="mt-4 max-w-3xl font-[var(--font-fraunces)] text-4xl leading-tight sm:text-5xl">
-            OneRoutine is trying to connect AI suggestions with actual daily planning.
-          </h2>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-[rgba(245,238,229,0.9)]">
-            The point is not just to generate a nice-looking routine once. The point is to place that routine beside tasks, dates, and longer commitments so the suggestion becomes part of a real system instead of a disposable prompt output.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-ink)] hover:bg-[#f7f0e6]"
-            >
-              Back to homepage
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white hover:bg-white/12"
-            >
-              Meet the creator
-            </Link>
+        <section className="mt-16 overflow-hidden rounded-[2.2rem] border border-[var(--line)] bg-[var(--brand-ink)] p-8 text-[color:var(--brand-ink-text)] lg:mt-24 sm:p-10 relative">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(183,121,70,0.25),transparent_40%)]" />
+          <div className="relative z-10">
+            <p className="eyebrow text-[color:var(--brand-warm)] mix-blend-plus-lighter">Connect it back to the product</p>
+            <h2 className="mt-4 max-w-3xl font-[var(--font-fraunces)] text-4xl leading-tight sm:text-5xl">
+              OneRoutine is trying to connect AI suggestions with actual daily planning.
+            </h2>
+            <p className="mt-6 max-w-3xl text-lg leading-8 opacity-90">
+              The point is not just to generate a nice-looking routine once. The point is to place that routine beside tasks, dates, and longer commitments so the suggestion becomes part of a real system instead of a disposable prompt output.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--background)] px-6 py-3 text-sm font-semibold text-[var(--foreground)] hover:opacity-90"
+              >
+                Back to homepage
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-transparent px-6 py-3 text-sm font-semibold hover:opacity-90"
+              >
+                Meet the creator
+              </Link>
+            </div>
           </div>
         </section>
       </main>
