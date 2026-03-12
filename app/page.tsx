@@ -10,8 +10,8 @@ import {
   Sparkles,
   Target,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import { useState } from "react";
 import { SiteFooter, SiteHeader } from "./components/site-chrome";
@@ -191,7 +191,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="glass-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-zinc-600">
+            <div className="glass-panel text-body inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold">
               <Sparkles className="h-4 w-4 text-[var(--brand-warm)]" />
               A calmer operating system for your days
             </div>
@@ -200,7 +200,7 @@ export default function Home() {
               Build a planning experience that feels like a finished product, not a pile of features.
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl">
+            <p className="text-body mt-7 max-w-2xl text-lg leading-8 sm:text-xl">
               OneRoutine is being designed as a calmer planner for people who want one system for routines, tasks, and direction. AI helps translate intention into a usable day, without turning life into a dashboard.
             </p>
 
@@ -231,7 +231,7 @@ export default function Home() {
                 >
                   <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand-warm)]">{item.value}</div>
                   <div className="mt-3 text-lg font-bold text-[var(--brand-ink)]">{item.label}</div>
-                  <div className="mt-2 text-sm leading-6 text-zinc-500">{item.note}</div>
+                  <div className="text-muted-ui mt-2 text-sm leading-6">{item.note}</div>
                 </motion.div>
               ))}
             </div>
@@ -245,7 +245,9 @@ export default function Home() {
           >
             <div className="absolute -left-3 top-8 hidden rounded-[1.75rem] bg-[var(--brand-ink)] px-5 py-4 text-sm text-white shadow-xl lg:block">
               <div className="font-semibold">Less noise</div>
-              <div className="mt-1 max-w-[13rem] text-white/75">More guidance on what to do today, next, and later.</div>
+              <div className="mt-1 max-w-[13rem] text-[rgba(245,238,229,0.86)]">
+                More guidance on what to do today, next, and later.
+              </div>
             </div>
 
             <div className="section-card overflow-hidden rounded-[2.25rem] p-3">
@@ -263,7 +265,9 @@ export default function Home() {
 
             <div className="absolute -bottom-5 right-4 hidden rounded-[1.75rem] border border-[rgba(255,255,255,0.18)] bg-[rgba(23,52,43,0.92)] px-5 py-4 text-sm text-white shadow-xl md:block">
               <div className="font-semibold">A single philosophy</div>
-              <div className="mt-1 max-w-[14rem] text-white/70">Calm, warm, and deliberate instead of generic SaaS polish.</div>
+              <div className="mt-1 max-w-[14rem] text-[rgba(245,238,229,0.82)]">
+                Calm, warm, and deliberate instead of generic SaaS polish.
+              </div>
             </div>
           </motion.div>
         </section>
@@ -284,7 +288,7 @@ export default function Home() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <h2 className="mt-6 text-2xl font-bold text-[var(--brand-ink)]">{card.title}</h2>
-                <p className="mt-4 text-base leading-8 text-zinc-600">{card.body}</p>
+                <p className="text-body mt-4 text-base leading-8">{card.body}</p>
               </motion.article>
             );
           })}
@@ -296,7 +300,7 @@ export default function Home() {
             <h2 className="mt-4 font-[var(--font-fraunces)] text-4xl leading-tight text-[var(--brand-ink)] sm:text-5xl">
               One routine. One day. One life.
             </h2>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-600">
+            <p className="text-body mt-6 max-w-xl text-lg leading-8">
               This product should feel coherent because the philosophy is coherent. It is not trying to win with more modules. It is trying to help people live with more clarity.
             </p>
           </div>
@@ -312,7 +316,7 @@ export default function Home() {
                 className="section-card rounded-[1.9rem] p-7"
               >
                 <div className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--brand-warm)]">{item.title}</div>
-                <p className="mt-4 text-lg leading-8 text-zinc-600">{item.body}</p>
+                <p className="text-body mt-4 text-lg leading-8">{item.body}</p>
               </motion.div>
             ))}
           </div>
@@ -324,12 +328,12 @@ export default function Home() {
             <h2 className="mt-4 font-[var(--font-fraunces)] text-4xl leading-tight sm:text-5xl">
               Try the routine generator.
             </h2>
-            <p className="mt-6 max-w-md text-base leading-8 text-white/72">
+            <p className="mt-6 max-w-md text-base leading-8 text-[rgba(245,238,229,0.92)]">
               Start with a vague goal. The demo gives it enough structure that you can actually begin today.
             </p>
-            <div className="mt-10 rounded-[1.6rem] border border-white/12 bg-white/6 p-5">
-              <div className="text-sm font-semibold text-white/84">What good output should feel like</div>
-              <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
+            <div className="mt-10 rounded-[1.6rem] border border-white/18 bg-white/10 p-5">
+              <div className="text-sm font-semibold text-[rgba(252,247,239,0.96)]">What good output should feel like</div>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-[rgba(245,238,229,0.88)]">
                 <li>Small enough to start without negotiation.</li>
                 <li>Clear enough to fit into a real day.</li>
                 <li>Gentle enough to feel sustainable.</li>
@@ -353,7 +357,7 @@ export default function Home() {
                   placeholder="E.g. sleep earlier, learn Japanese, workout after work"
                   value={routineInput}
                   onChange={(e) => setRoutineInput(e.target.value)}
-                  className="h-14 w-full rounded-2xl border border-[var(--line)] bg-[#fffaf4] pl-12 pr-4 text-base outline-none placeholder:text-zinc-400 focus:border-[var(--brand-ink)] focus:bg-white"
+                  className="surface-input h-14 w-full rounded-2xl border border-[var(--line)] pl-12 pr-4 text-base text-[var(--foreground)] outline-none placeholder:text-zinc-400 focus:border-[var(--brand-warm)]"
                 />
               </div>
               <button
@@ -366,13 +370,13 @@ export default function Home() {
             </form>
 
             <div className="mt-5 flex flex-wrap items-center gap-2 text-sm">
-              <span className="mr-2 font-medium text-zinc-500">Try:</span>
+              <span className="text-muted-ui mr-2 font-medium">Try:</span>
               {examples.map((example) => (
                 <button
                   key={example.value}
                   type="button"
                   onClick={() => setRoutineInput(example.value)}
-                  className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-zinc-700 hover:bg-[#f7f0e6] hover:text-[var(--brand-ink)]"
+                  className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-zinc-700 hover:bg-[var(--surface-soft)] hover:text-[var(--brand-ink)]"
                 >
                   {example.label}
                 </button>
@@ -383,14 +387,14 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-10 rounded-[1.75rem] bg-[#f8f2ea] p-6"
+                className="surface-soft mt-10 rounded-[1.75rem] p-6"
               >
                 <div className="flex flex-col gap-3 border-b border-[var(--line)] pb-5 sm:flex-row sm:items-end sm:justify-between">
                   <div>
                     <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand-warm)]">Routine suggestion</div>
                     <div className="mt-2 text-2xl font-bold text-[var(--brand-ink)]">{lastPrompt}</div>
                   </div>
-                  <div className="text-sm text-zinc-500">Start with progress, not perfection.</div>
+                  <div className="text-muted-ui text-sm">Start with progress, not perfection.</div>
                 </div>
 
                 <div className="mt-6 space-y-3">
@@ -405,7 +409,7 @@ export default function Home() {
                       <div className="w-fit rounded-xl bg-[var(--brand-ink)] px-3 py-2 font-mono text-sm font-semibold text-white">
                         {step.time}
                       </div>
-                      <div className="text-base font-medium text-zinc-800">{step.title}</div>
+                      <div className="text-base font-medium text-[var(--foreground)]">{step.title}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -414,7 +418,7 @@ export default function Home() {
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-xl font-bold">Want this inside the app?</h3>
-                      <p className="mt-2 max-w-xl text-sm leading-6 text-white/72">
+                      <p className="mt-2 max-w-xl text-sm leading-6 text-[rgba(245,238,229,0.84)]">
                         Join early access to follow the launch and help shape how AI planning should behave in real life.
                       </p>
                     </div>
@@ -433,24 +437,43 @@ export default function Home() {
         </section>
 
         <section className="mt-24 grid gap-8 lg:grid-cols-[1.02fr_0.98fr]">
-          <div className="section-card overflow-hidden rounded-[2rem]">
-            <div className="relative">
-              <Image
-                src="/hero-mock.png"
-                alt="OneRoutine planning view"
-                width={1200}
-                height={760}
-                className="h-[23rem] w-full object-cover opacity-30"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(140deg,rgba(15,31,26,0.9),rgba(23,52,43,0.78),rgba(15,31,26,0.1))]" />
-              <div className="absolute inset-0 flex flex-col justify-end p-8 sm:p-10">
+          <div className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] shadow-[var(--shadow-soft)]">
+            <Image
+              src="/product-direction-banner.png"
+              alt="OneRoutine product direction banner"
+              width={1600}
+              height={900}
+              className="h-[30rem] w-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(12,24,20,0.88)_0%,rgba(17,38,31,0.72)_44%,rgba(17,38,31,0.28)_72%,rgba(17,38,31,0.42)_100%)]" />
+            <div className="absolute inset-0 flex flex-col justify-between p-8 sm:p-10">
+              <div className="max-w-2xl">
                 <p className="eyebrow text-[color:var(--brand-rose)]">Product direction</p>
-                <h2 className="mt-4 max-w-2xl font-[var(--font-fraunces)] text-4xl leading-tight text-white sm:text-5xl">
+                <h2 className="mt-4 font-[var(--font-fraunces)] text-4xl leading-tight text-white sm:text-5xl">
                   Build carefully. Make it feel intentional from the first screen.
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-8 text-white/72">
-                  The brand should communicate calm confidence. The interface should support that with warm materials, restrained color, and a rhythm that feels composed rather than busy.
+                <p className="mt-5 max-w-xl text-base leading-8 text-[rgba(245,238,229,0.88)]">
+                  This area now uses its own dedicated artwork, which gives the homepage a cleaner visual hierarchy and makes the product story feel less templated.
                 </p>
+              </div>
+
+              <div className="grid max-w-3xl gap-4 md:grid-cols-[1.15fr_0.85fr_0.85fr]">
+                <div className="rounded-[1.6rem] border border-white/14 bg-[rgba(12,24,20,0.46)] p-5 backdrop-blur-sm">
+                  <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[rgba(245,238,229,0.68)]">Visual brief</div>
+                  <div className="mt-3 text-xl font-semibold text-white">Calm confidence, not app-store noise.</div>
+                </div>
+                <div className="rounded-[1.6rem] border border-white/14 bg-[rgba(12,24,20,0.38)] p-5 backdrop-blur-sm">
+                  <div className="text-sm font-semibold text-[rgba(245,238,229,0.7)]">Material</div>
+                  <div className="mt-2 text-sm leading-6 text-[rgba(245,238,229,0.9)]">
+                    Warm paper tones, restrained green, soft highlights.
+                  </div>
+                </div>
+                <div className="rounded-[1.6rem] border border-white/14 bg-[rgba(12,24,20,0.38)] p-5 backdrop-blur-sm">
+                  <div className="text-sm font-semibold text-[rgba(245,238,229,0.7)]">Composition</div>
+                  <div className="mt-2 text-sm leading-6 text-[rgba(245,238,229,0.9)]">
+                    A wide scene with breathing room and controlled focus.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -467,7 +490,7 @@ export default function Home() {
               >
                 <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--brand-warm)]">{item.phase}</div>
                 <h3 className="mt-3 text-2xl font-bold text-[var(--brand-ink)]">{item.title}</h3>
-                <p className="mt-3 text-base leading-7 text-zinc-600">{item.body}</p>
+                <p className="text-body mt-3 text-base leading-7">{item.body}</p>
               </motion.div>
             ))}
 
@@ -476,7 +499,7 @@ export default function Home() {
                 <Target className="mt-1 h-5 w-5 shrink-0 text-[var(--brand-warm)]" />
                 <div>
                   <div className="font-semibold text-[var(--brand-ink)]">Related reading</div>
-                  <p className="mt-2 text-sm leading-6 text-zinc-500">
+                  <p className="text-muted-ui mt-2 text-sm leading-6">
                     The content page explains what an AI routine planner should actually do, which also helps the site&apos;s SEO structure stay coherent.
                   </p>
                   <Link
@@ -498,7 +521,7 @@ export default function Home() {
             <h2 className="mt-4 font-[var(--font-fraunces)] text-4xl leading-tight text-[var(--brand-ink)] sm:text-5xl">
               Follow the first release.
             </h2>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-600">
+            <p className="text-body mt-6 max-w-xl text-lg leading-8">
               Join the waitlist if this planning philosophy resonates. Early users will get product updates, first access, and the chance to shape how routines, tasks, and life planning evolve together.
             </p>
 
@@ -508,7 +531,9 @@ export default function Home() {
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-ink)]" />
                   <div>
                     <div className="font-semibold text-[var(--brand-ink)]">Product updates without noise</div>
-                    <div className="mt-1 text-sm leading-6 text-zinc-500">Launch progress, feature notes, and early access timing only.</div>
+                    <div className="text-muted-ui mt-1 text-sm leading-6">
+                      Launch progress, feature notes, and early access timing only.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -517,7 +542,9 @@ export default function Home() {
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[var(--brand-ink)]" />
                   <div>
                     <div className="font-semibold text-[var(--brand-ink)]">A chance to influence the first version</div>
-                    <div className="mt-1 text-sm leading-6 text-zinc-500">The first users will directly shape what becomes core and what gets cut.</div>
+                    <div className="text-muted-ui mt-1 text-sm leading-6">
+                      The first users will directly shape what becomes core and what gets cut.
+                    </div>
                   </div>
                 </div>
               </div>

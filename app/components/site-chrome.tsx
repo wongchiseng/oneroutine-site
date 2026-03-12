@@ -21,11 +21,11 @@ export function SiteHeader({ ctaHref, ctaLabel }: SiteHeaderProps) {
           <Image src="/logo.png" alt="OneRoutine Logo" width={34} height={34} className="rounded-2xl" />
           <div className="min-w-0">
             <div className="truncate">OneRoutine</div>
-            <div className="truncate text-xs font-medium text-zinc-500">One Routine. One Day. One Life.</div>
+            <div className="text-muted-ui truncate text-xs font-medium">One Routine. One Day. One Life.</div>
           </div>
         </Link>
 
-        <div className="hidden items-center gap-5 text-sm text-zinc-600 md:flex">
+        <div className="text-body hidden items-center gap-5 text-sm md:flex">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-[var(--brand-ink)]">
               {link.label}
@@ -51,7 +51,7 @@ export function SiteHeader({ ctaHref, ctaLabel }: SiteHeaderProps) {
 export function SiteFooter() {
   return (
     <footer className="px-6 pb-10 pt-4">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 rounded-[2rem] border border-[var(--line)] bg-[rgba(255,251,245,0.72)] px-6 py-8 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+      <div className="text-body mx-auto flex max-w-6xl flex-col gap-6 rounded-[2rem] border border-[var(--line)] bg-[rgba(255,251,245,0.72)] px-6 py-8 text-sm sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="font-semibold text-[var(--brand-ink)]">OneRoutine</div>
           <div className="mt-1">A calmer planner for routines, tasks, and direction.</div>
@@ -70,7 +70,7 @@ export function SiteFooter() {
             Terms
           </Link>
         </div>
-        <div className="text-zinc-500">© 2026 OneRoutine</div>
+        <div className="text-muted-ui">© 2026 OneRoutine</div>
       </div>
     </footer>
   );
@@ -94,7 +94,7 @@ export function LegalLayout({ eyebrow, title, meta, children }: LegalLayoutProps
           <h1 className="mt-4 font-[var(--font-fraunces)] text-4xl leading-tight text-[var(--brand-ink)] sm:text-5xl">
             {title}
           </h1>
-          <div className="mt-5 space-y-1 text-sm font-medium text-zinc-500">
+          <div className="text-muted-ui mt-5 space-y-1 text-sm font-medium">
             {meta.map((item) => (
               <div key={item}>{item}</div>
             ))}
